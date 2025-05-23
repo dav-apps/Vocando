@@ -1,12 +1,14 @@
 import { Component } from "@angular/core"
-import { RouterOutlet } from "@angular/router"
+import * as DavUIComponents from "dav-ui-components"
 
 @Component({
 	selector: "app-root",
-	imports: [RouterOutlet],
+	imports: [],
 	templateUrl: "./app.component.html",
 	styleUrl: "./app.component.scss"
 })
 export class AppComponent {
-	title = "vocando"
+	constructor() {
+		DavUIComponents.setLocale("de-DE")
+	}
 }
