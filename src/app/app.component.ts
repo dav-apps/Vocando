@@ -22,18 +22,22 @@ Ich lese gerne und mag Tiere: Wir haben einen Hund, zwei Katzen und im Garten ei
 
 Nach der Schule gehe ich oft mit meinen Freundinnen im Park spazieren, manchmal essen wir ein Eis. Am Samstag gehen wir oft ins Kino. Am Sonntag schlafe ich lange, dann koche ich mit meiner Mutter das Mittagessen. Nach dem Essen gehen wir mit dem Hund am See spazieren. Sonntag ist mein Lieblingstag!
 	`
-	preparedText = ""
+	showPopup = false
+	popupPosition = { x: 0, y: 0 }
+	selectedWord = ""
 
 	constructor() {
 		DavUIComponents.setLocale("de-DE")
 	}
 
-	ngOnInit() {
-		for (let word of Object.keys(this.dictionary)) {
-			this.text = this.text.replace(
-				new RegExp(`\\b${word}\\b`, "g"),
-				`<span class="highlight">${word}</span>`
-			)
+	onWordClick(event: Event, word: string) {
+		if (!this.dictionary[word]) return
+
+		this.selectedWord = word
+		this.showPopup = true
+		this.popupPosition = {
+			x: (event as PointerEvent).clientX,
+			y: (event as PointerEvent).clientY
 		}
 	}
 }
