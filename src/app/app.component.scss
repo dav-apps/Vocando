@@ -1,0 +1,8 @@
+.text-container::ng-deep {
+	font-size: 20px;
+
+	span {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
