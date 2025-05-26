@@ -22,6 +22,39 @@
 			</dav-tab-bar-item>
 		</dav-tab-bar>
 	</div>
+
+	<div class="navbar-spacer"></div>
+
+	<div class="navbar-icon-buttons-container">
+		<dav-icon-button
+			[selected]="userButtonSelected"
+			(click)="navigateToPage('/user')"
+		>
+			@if (!userButtonSelected && !dataService.dav.isLoggedIn) {
+			<fa-icon [icon]="faCircleUserRegular"></fa-icon>
+			} @else if (userButtonSelected && !dataService.dav.isLoggedIn) {
+			<fa-icon [icon]="faCircleUserSolid"></fa-icon>
+			} @else if (dataService.dav.isLoggedIn) {
+			<img
+				[src]="dataService.dav.user.ProfileImage"
+				class="profile-image"
+				width="28"
+				height="28"
+			/>
+			}
+		</dav-icon-button>
+
+		<dav-icon-button
+			[selected]="settingsButtonSelected"
+			(click)="navigateToPage('/settings')"
+		>
+			@if (settingsButtonSelected) {
+			<fa-icon [icon]="faGearSolid"></fa-icon>
+			} @else {
+			<fa-icon [icon]="faGearRegular"></fa-icon>
+			}
+		</dav-icon-button>
+	</div>
 </div>
 
 <div class="content-container">
