@@ -8,7 +8,7 @@ export const routes: Routes = [
 		component: DiscoverPageComponent
 	},
 	{
-		path: "article",
+		path: "article/:uuid",
 		component: ArticlePageComponent
 	}
 ]

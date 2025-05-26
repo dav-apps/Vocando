@@ -1,4 +1,5 @@
 import { Component } from "@angular/core"
+import { ActivatedRoute } from "@angular/router"
 
 @Component({
 	templateUrl: "./article-page.component.html",
@@ -13,16 +14,49 @@ export class ArticlePageComponent {
 		München: { description: "München ist eine Stadt in Deutschland." },
 		Klara: { description: "Klara ist Annas Schwester." }
 	}
-	text = `
-Mein Name ist Anna. Ich komme aus Österreich und lebe seit drei Jahren in Deutschland. Ich bin 15 Jahre alt und habe zwei Geschwister: Meine Schwester heißt Klara und ist 13 Jahre alt, mein Bruder Michael ist 18 Jahre alt. Wir wohnen mit unseren Eltern in einem Haus in der Nähe von München. Meine Mutter ist Köchin, mein Vater arbeitet in einer Bank.
-
-Ich lese gerne und mag Tiere: Wir haben einen Hund, zwei Katzen und im Garten einen Teich mit Goldfischen. Ich gehe auch gerne in die Schule, mein Lieblingsfach ist Mathematik. Physik und Chemie mag ich nicht so gerne.
-
-Nach der Schule gehe ich oft mit meinen Freundinnen im Park spazieren, manchmal essen wir ein Eis. Am Samstag gehen wir oft ins Kino. Am Sonntag schlafe ich lange, dann koche ich mit meiner Mutter das Mittagessen. Nach dem Essen gehen wir mit dem Hund am See spazieren. Sonntag ist mein Lieblingstag!
-	`
+	stories: {
+		id: string
+		imageSrc: string
+		title: string
+		text: string
+	}[] = [
+		{
+			id: "haensel-und-gretel",
+			imageSrc: "/images/haensel-und-gretel.jpg",
+			title: "Hänsel und Gretel",
+			text: "Hänsel und Gretel sind Geschwister, die im Wald verloren gehen. Sie finden ein Haus aus Lebkuchen und treffen eine Hexe."
+		},
+		{
+			id: "maerzrevolution",
+			imageSrc: "/images/maerzrevolution.jpg",
+			title: "Die Deusche Märzrevolution",
+			text: "Die Deutsche Märzrevolution von 1848 war ein wichtiger Schritt in der deutschen Geschichte, der zu mehr Freiheit und Demokratie führte."
+		},
+		{
+			id: "physio",
+			imageSrc: "/images/physio.jpg",
+			title: "Physiotherapie",
+			text: "Physiotherapie ist eine Behandlungsmethode, die Menschen hilft, sich von Verletzungen zu erholen und ihre Beweglichkeit zu verbessern."
+		}
+	]
+	uuid = ""
+	title = ""
+	text = ""
 	showPopup = false
 	popupPosition = { x: 0, y: 0 }
 	selectedWord = ""
+
+	constructor(private activatedRoute: ActivatedRoute) {}
+
+	ngOnInit() {
+		this.uuid = this.activatedRoute.snapshot.paramMap.get("uuid")
+		const story = this.stories.find(story => story.id === this.uuid)
+
+		if (story != null) {
+			this.title = story.title
+			this.text = story.text
+		}
+	}
 
 	onWordClick(event: Event, word: string) {
 		if (!this.dictionary[word]) return
