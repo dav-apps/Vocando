@@ -1,5 +1,5 @@
 import { Routes } from "@angular/router"
-import { ArticlePageComponent } from "./pages/article-page.component"
+import { ArticlePageComponent } from "./pages/article-page/article-page.component"
 
 export const routes: Routes = [
 	{
