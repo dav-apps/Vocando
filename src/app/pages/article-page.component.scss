@@ -1,0 +1,20 @@
+.text-container::ng-deep {
+	font-size: 20px;
+
+	span.highlight {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
+.popup {
+	position: absolute;
+	background-color: white;
+	border: 1px solid black;
+	padding: 8px 16px;
+	z-index: 1000;
+
+	h3, p {
+		margin: 0;
+	}
+}

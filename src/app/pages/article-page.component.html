@@ -1,0 +1,22 @@
+<div class="text-container">
+	@for (word of text.split(" "); let i = $index; track i) {
+	<span
+		[class.highlight]="dictionary[word.replace('.', '')]"
+		(click)="onWordClick($event, word.replace('.', ''))"
+		>{{ word.replace(".", "") }}</span
+	>@if (word.includes('.')) {<span class="dot">.</span>}{{ " " }}
+	}
+</div>
+
+@if (showPopup) {
+<div
+	class="popup"
+	[style.top.px]="popupPosition.y"
+	[style.left.px]="popupPosition.x"
+>
+	<div class="popup-content">
+		<h3>{{ selectedWord }}</h3>
+		<p>{{ dictionary[selectedWord].description }}</p>
+	</div>
+</div>
+}
