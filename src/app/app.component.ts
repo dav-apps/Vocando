@@ -1,11 +1,12 @@
-import { Component } from "@angular/core"
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core"
 import * as DavUIComponents from "dav-ui-components"
 
 @Component({
 	selector: "app-root",
-	imports: [],
 	templateUrl: "./app.component.html",
-	styleUrl: "./app.component.scss"
+	styleUrl: "./app.component.scss",
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	standalone: true
 })
 export class AppComponent {
 	dictionary: { [key: string]: { description: string } } = {
@@ -26,6 +27,9 @@ Nach der Schule gehe ich oft mit meinen Freundinnen im Park spazieren, manchmal 
 	popupPosition = { x: 0, y: 0 }
 	selectedWord = ""
 
+	startTabActive: boolean = false
+	discoverTabActive: boolean = false
+
 	constructor() {
 		DavUIComponents.setLocale("de-DE")
 	}
@@ -39,5 +43,13 @@ Nach der Schule gehe ich oft mit meinen Freundinnen im Park spazieren, manchmal 
 			x: (event as PointerEvent).clientX,
 			y: (event as PointerEvent).clientY
 		}
+	}
+
+	scrollToTop(path: string) {
+		// TODO
+	}
+
+	navigateToPage(path: string) {
+		// TODO
 	}
 }

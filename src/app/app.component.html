@@ -1,22 +1,50 @@
-<div class="text-container">
-	@for (word of text.split(" "); let i = $index; track i) {
-	<span
-		[class.highlight]="dictionary[word.replace('.', '')]"
-		(click)="onWordClick($event, word.replace('.', ''))"
-		>{{ word.replace(".", "") }}</span
-	>@if (word.includes('.')) {<span class="dot">.</span>}{{ " " }}
-	}
-</div>
+<div class="navbar acrylic">
+	<!-- Logo + name -->
+	<a class="navbar-header" routerLink="/" (click)="scrollToTop('/')">
+		<img src="/icons/icon-192.png" width="48" height="48" />
+		<span>Vocando</span>
+	</a>
 
-@if (showPopup) {
-<div
-	class="popup"
-	[style.top.px]="popupPosition.y"
-	[style.left.px]="popupPosition.x"
->
-	<div class="popup-content">
-		<h3>{{ selectedWord }}</h3>
-		<p>{{ dictionary[selectedWord].description }}</p>
+	<div class="navbar-tab-bar-container">
+		<dav-tab-bar>
+			<dav-tab-bar-item
+				[active]="startTabActive"
+				(click)="navigateToPage('/')"
+			>
+				Startseite
+			</dav-tab-bar-item>
+
+			<dav-tab-bar-item
+				[active]="discoverTabActive"
+				(click)="navigateToPage('/discover')"
+			>
+				Entdecken
+			</dav-tab-bar-item>
+		</dav-tab-bar>
 	</div>
 </div>
-}
+
+<div class="content-container">
+	<div class="text-container">
+		@for (word of text.split(" "); let i = $index; track i) {
+		<span
+			[class.highlight]="dictionary[word.replace('.', '')]"
+			(click)="onWordClick($event, word.replace('.', ''))"
+			>{{ word.replace(".", "") }}</span
+		>@if (word.includes('.')) {<span class="dot">.</span>}{{ " " }}
+		}
+	</div>
+
+	@if (showPopup) {
+	<div
+		class="popup"
+		[style.top.px]="popupPosition.y"
+		[style.left.px]="popupPosition.x"
+	>
+		<div class="popup-content">
+			<h3>{{ selectedWord }}</h3>
+			<p>{{ dictionary[selectedWord].description }}</p>
+		</div>
+	</div>
+	}
+</div>
