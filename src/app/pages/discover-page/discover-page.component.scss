@@ -1,0 +1,18 @@
+.list-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px;
+	max-width: 1000px;
+	padding: 32px 12px 12px;
+}
+
+.card-container {
+	max-width: 200px;
+
+	dav-card {
+		height: 100%;
+		cursor: pointer;
+	}
+}

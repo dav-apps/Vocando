@@ -1,0 +1,11 @@
+<div class="container slide-up-in">
+	<div class="list-container">
+		@for (story of stories; track story.title) {
+		<div class="card-container">
+			<dav-card
+				[imageSrc]="story.imageSrc"
+			></dav-card>
+		</div>
+	}
+	</div>
+</div>

@@ -1,5 +1,15 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core"
-import { NavigationStart, Router, RouterOutlet } from "@angular/router"
+import {
+	Component,
+	CUSTOM_ELEMENTS_SCHEMA,
+	ElementRef,
+	ViewChild
+} from "@angular/core"
+import {
+	NavigationStart,
+	Router,
+	RouterLink,
+	RouterOutlet
+} from "@angular/router"
 import {
 	faCircleUser as faCircleUserSolid,
 	faGear as faGearSolid,
@@ -21,7 +31,7 @@ import { DataService } from "./services/data-service"
 	templateUrl: "./app.component.html",
 	styleUrl: "./app.component.scss",
 	standalone: true,
-	imports: [RouterOutlet, FontAwesomeModule],
+	imports: [RouterLink, RouterOutlet, FontAwesomeModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	providers: [DataService]
 })
@@ -40,6 +50,9 @@ export class AppComponent {
 	settingsButtonSelected: boolean = false
 	currentUrl: string = ""
 
+	@ViewChild("contentContainer", { static: true })
+	contentContainer: ElementRef<HTMLDivElement>
+
 	constructor(private router: Router, public dataService: DataService) {
 		DavUIComponents.setLocale("de-DE")
 
@@ -57,11 +70,24 @@ export class AppComponent {
 		})
 	}
 
-	scrollToTop(path: string) {
-		// TODO
+	ngOnInit() {
+		this.dataService.contentContainer = this.contentContainer.nativeElement
 	}
 
 	navigateToPage(path: string) {
-		// TODO
+		if (this.currentUrl == path) {
+			this.scrollToTop(path)
+		} else {
+			this.router.navigate([path])
+		}
+	}
+
+	scrollToTop(path: string) {
+		if (path == this.currentUrl) {
+			this.dataService.contentContainer.scroll({
+				top: 0,
+				behavior: "smooth"
+			})
+		}
 	}
 }
