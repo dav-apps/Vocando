@@ -81,3 +81,33 @@
 	</div>
 	}
 </div>
+
+<div class="bottom-navbar acrylic">
+	<dav-navigation-bar>
+		<dav-navigation-bar-item
+			[active]="startTabActive"
+			(click)="navigateToPage('/')"
+		>
+			@if (startTabActive) {
+			<fa-icon slot="icon" [icon]="faHouseSolid"></fa-icon>
+			} @else {
+			<fa-icon slot="icon" [icon]="faHouseRegular"></fa-icon>
+			}
+
+			<p slot="label">Startseite</p>
+		</dav-navigation-bar-item>
+
+		<dav-navigation-bar-item
+			[active]="discoverTabActive"
+			(click)="navigateToPage('/discover')"
+		>
+			@if (discoverTabActive) {
+			<fa-icon slot="icon" [icon]="faSparklesSolid"></fa-icon>
+			} @else {
+			<fa-icon slot="icon" [icon]="faSparklesRegular"></fa-icon>
+			}
+
+			<p slot="label">Entdecken</p>
+		</dav-navigation-bar-item>
+	</dav-navigation-bar>
+</div>
