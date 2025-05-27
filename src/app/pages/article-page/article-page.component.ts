@@ -166,7 +166,148 @@ export class ArticlePageComponent {
 		Habsburgerreiches: {
 			definition: "Habsburg Empire (genitive form)",
 			type: "Proper Noun"
-		}
+		},
+		Physiotherapie: {
+			definition: "Physiotherapy / physical therapy",
+			type: "Noun"
+		},
+		zentraler: {
+			definition: "Central / key (adjective, masc. nom.)",
+			type: "Adjective"
+		},
+		Bestandteil: { definition: "Component / integral part", type: "Noun" },
+		moderner: {
+			definition: "Modern (adjective, genitive form)",
+			type: "Adjective"
+		},
+		Gesundheitsversorgung: {
+			definition: "Healthcare / health service provision",
+			type: "Noun"
+		},
+		dient: { definition: "Serves / functions as", type: "Verb" },
+		nur: { definition: "Only / just", type: "Adverb" },
+		Rehabilitation: { definition: "Rehabilitation", type: "Noun" },
+		Verletzungen: { definition: "Injuries", type: "Noun" },
+		Operationen: { definition: "Surgeries / operations", type: "Noun" },
+		spielt: { definition: "Plays", type: "Verb" },
+		entscheidende: { definition: "Decisive / crucial", type: "Adjective" },
+		Rolle: { definition: "Role", type: "Noun" },
+		Prävention: { definition: "Prevention", type: "Noun" },
+		Schmerzbehandlung: {
+			definition: "Pain treatment / pain management",
+			type: "Noun"
+		},
+		langfristigen: {
+			definition: "Long-term (adjective, dative/genitive)",
+			type: "Adjective"
+		},
+		Erhaltung: { definition: "Preservation / maintenance", type: "Noun" },
+		körperlicher: {
+			definition: "Physical (genitive form)",
+			type: "Adjective"
+		},
+		Funktionen: { definition: "Functions", type: "Noun" },
+		Dieses: {
+			definition: "This (neuter, nominative)",
+			type: "Pronoun/Determiner"
+		},
+		Lehrbuch: { definition: "Textbook", type: "Noun" },
+		richtet: { definition: "Addresses / targets", type: "Verb" },
+		an: { definition: "At / to", type: "Preposition" },
+		Studierende: {
+			definition: "Students (gender-neutral form)",
+			type: "Noun"
+		},
+		"Berufseinsteiger*innen": {
+			definition: "Career starters / entry-level professionals (inclusive)",
+			type: "Noun"
+		},
+		sowie: { definition: "As well as", type: "Conjunction" },
+		Fachpersonen: { definition: "Professionals / experts", type: "Noun" },
+		Gesundheitswesen: { definition: "Healthcare system", type: "Noun" },
+		fundiertes: { definition: "Well-founded / sound", type: "Adjective" },
+		Verständnis: { definition: "Understanding", type: "Noun" },
+		für: { definition: "For", type: "Preposition" },
+		praktische: { definition: "Practical", type: "Adjective" },
+		Anwendung: { definition: "Application / use", type: "Noun" },
+		physiotherapeutischer: {
+			definition: "Physiotherapeutic (genitive form)",
+			type: "Adjective"
+		},
+		Maßnahmen: { definition: "Measures / actions", type: "Noun" },
+		gewinnen: { definition: "To gain / acquire", type: "Verb" },
+		möchten: { definition: "Would like to", type: "Verb" },
+		einmal: { definition: "Once / once upon a time", type: "Adverb" },
+		tief: { definition: "Deep", type: "Adjective/Adverb" },
+		finsteren: { definition: "Dark / gloomy", type: "Adjective" },
+		Wald: { definition: "Forest / woods", type: "Noun" },
+		kleines: { definition: "Small / little (neuter)", type: "Adjective" },
+		Häuschen: { definition: "Little house / cottage", type: "Noun" },
+		Rande: { definition: "Edge / border (dative)", type: "Noun" },
+		Lichtung: { definition: "Clearing (in a forest)", type: "Noun" },
+		Dort: { definition: "There", type: "Adverb" },
+		armer: { definition: "Poor", type: "Adjective" },
+		Holzhacker: { definition: "Woodcutter", type: "Noun" },
+		seinen: {
+			definition: "His (accusative plural)",
+			type: "Pronoun/Determiner"
+		},
+		zwei: { definition: "Two", type: "Number" },
+		Kindern: { definition: "Children (dative)", type: "Noun" },
+		Hänsel: { definition: "Hänsel (boy's name)", type: "Proper Noun" },
+		Gretel: { definition: "Gretel (girl's name)", type: "Proper Noun" },
+		Mann: { definition: "Man / husband", type: "Noun" },
+		arbeitete: { definition: "Worked", type: "Verb" },
+		hart: { definition: "Hard / tough", type: "Adjective/Adverb" },
+		knapp: { definition: "Scarce / barely enough", type: "Adjective" },
+		Hunger: { definition: "Hunger", type: "Noun" },
+		wohnte: { definition: "Lived / resided", type: "Verb" },
+		oft: { definition: "Often", type: "Adverb" },
+		Tisch: { definition: "Table", type: "Noun" },
+		kluger: { definition: "Clever / smart", type: "Adjective" },
+		Junge: { definition: "Boy", type: "Noun" },
+		wachen: { definition: "Alert / watchful", type: "Adjective" },
+		Augen: { definition: "Eyes", type: "Noun" },
+		mutigen: { definition: "Brave / courageous", type: "Adjective" },
+		Herzen: { definition: "Heart (dative/genitive)", type: "Noun" },
+		jüngere: { definition: "Younger", type: "Adjective" },
+		Schwester: { definition: "Sister", type: "Noun" },
+		sanft: { definition: "Gentle / soft", type: "Adjective" },
+		neugierig: { definition: "Curious", type: "Adjective" },
+		ebenso: { definition: "Just as / equally", type: "Adverb" },
+		tapfer: { definition: "Brave / valiant", type: "Adjective" },
+		Bruder: { definition: "Brother", type: "Noun" },
+		hielten: { definition: "Held / stuck together", type: "Verb" },
+		immer: { definition: "Always", type: "Adverb" },
+		zusammen: { definition: "Together", type: "Adverb" },
+		selbst: { definition: "Even / themselves", type: "Adverb/Pronoun" },
+		wenn: { definition: "If / when", type: "Conjunction" },
+		Wind: { definition: "Wind", type: "Noun" },
+		durch: { definition: "Through", type: "Preposition" },
+		Ritzen: { definition: "Cracks / gaps", type: "Noun" },
+		Hauses: { definition: "House (genitive)", type: "Noun" },
+		pfiff: { definition: "Whistled / blew", type: "Verb" },
+		Magen: { definition: "Stomach", type: "Noun" },
+		knurrte: { definition: "Growled / grumbled", type: "Verb" },
+		hungriger: {
+			definition: "Hungry (masculine adjective form)",
+			type: "Adjective"
+		},
+		Wolf: { definition: "Wolf", type: "Noun" },
+		Eines: {
+			definition: "One (day/evening – indefinite article neuter genitive)",
+			type: "Determiner"
+		},
+		Abends: { definition: "In the evening (genitive)", type: "Noun" },
+		Mond: { definition: "Moon", type: "Noun" },
+		silberner: { definition: "Silver (adjective form)", type: "Adjective" },
+		Teller: { definition: "Plate", type: "Noun" },
+		Himmel: { definition: "Sky / heaven", type: "Noun" },
+		hing: { definition: "Hung", type: "Verb" },
+		hörten: { definition: "Heard", type: "Verb" },
+		Gespräch: { definition: "Conversation / talk", type: "Noun" },
+		zwischen: { definition: "Between", type: "Preposition" },
+		Eltern: { definition: "Parents", type: "Noun" }
 	}
 	stories: {
 		id: string
@@ -180,9 +321,20 @@ export class ArticlePageComponent {
 			id: "haensel-und-gretel",
 			imageSrc: "/images/haensel-und-gretel.jpg",
 			title: "Hänsel und Gretel",
-			chapterTitle: "Kapitel 1: Im Wald verloren",
-			chapterSubtitle: "Ein Märchen der Brüder Grimm",
-			text: "Hänsel und Gretel sind Geschwister, die im Wald verloren gehen. Sie finden ein Haus aus Lebkuchen und treffen eine Hexe."
+			chapterTitle: "Kapitel 1: Der dunkle Wald",
+			chapterSubtitle:
+				"Hänsel und Gretel leben mit ihrem armen Vater und ihrer hartherzigen Stiefmutter in einem kleinen Haus am Waldrand. Als die Eltern beschließen, die Kinder im Wald auszusetzen, belauscht Hänsel das Gespräch und sammelt heimlich Kieselsteine, um den Weg zurückzufinden. Am nächsten Morgen werden die Geschwister in den tiefen Wald geführt, ohne zu wissen, was sie dort erwartet.",
+			text: `
+Es war einmal, tief in einem finsteren Wald, ein kleines Häuschen am Rande einer Lichtung. Dort lebte ein armer Holzhacker mit seiner Frau und seinen zwei Kindern, Hänsel und Gretel. Der Mann arbeitete hart, doch das Brot war knapp, und der Hunger wohnte oft mit am Tisch.
+
+Hänsel war ein kluger Junge mit wachen Augen und einem mutigen Herzen. Gretel, seine jüngere Schwester, war sanft und neugierig, doch ebenso tapfer wie ihr Bruder. Sie hielten immer zusammen, selbst wenn der Wind durch die Ritzen des Hauses pfiff und der Magen knurrte wie ein hungriger Wolf.
+
+Eines Abends, als der Mond wie ein silberner Teller am Himmel hing, hörten die Kinder ein Gespräch zwischen den Eltern. Die Stiefmutter, deren Herz hart wie Stein war, flüsterte mit kalter Stimme: „Wir haben nicht genug zu essen. Wir müssen die Kinder morgen in den Wald bringen und sie dort lassen.“ Der Vater seufzte schwer. „Ich kann das nicht tun. Es sind doch unsere Kinder.“ Doch die Frau ließ nicht locker.
+
+Hänsel, der das Gespräch belauscht hatte, schlich sich in der Nacht hinaus. Im Garten suchte er nach weißen Kieselsteinen, die im Mondlicht glänzten wie kleine Sterne. Er füllte seine Taschen damit, klamm und entschlossen. Gretel fragte ihn am Morgen, was er da tue, doch Hänsel lächelte nur und sagte: „Vertrau mir.“
+
+So machten sie sich auf den Weg in den Wald – tiefer und weiter, als sie je zuvor gegangen waren. Die Bäume wurden dichter, das Licht schwächer, und das Flüstern des Waldes klang wie tausend fremde Stimmen. Doch Hänsel blickte nicht zurück. Noch nicht.
+			`
 		},
 		{
 			id: "maerzrevolution",
@@ -209,9 +361,19 @@ Was als Aufbegehren gegen die Unterdrückung begann, war nun zur gesamtdeutschen
 			id: "physio",
 			imageSrc: "/images/physio.jpg",
 			title: "Physiotherapie",
-			chapterTitle: "Kapitel 1: Heilung durch Bewegung",
-			chapterSubtitle: "Ein Blick auf die Physiotherapie",
-			text: "Physiotherapie ist eine Behandlungsmethode, die Menschen hilft, sich von Verletzungen zu erholen und ihre Beweglichkeit zu verbessern."
+			chapterTitle:
+				"Kapitel 1: Einführung in die Physiotherapie im Gesundheitswesen",
+			chapterSubtitle:
+				"Die Physiotherapie ist ein zentraler Bestandteil der Gesundheitsversorgung und zielt auf Rehabilitation, Prävention und die Förderung von Lebensqualität ab. Sie basiert auf evidenzbasierter Praxis und interdisziplinärer Zusammenarbeit, wobei Patient*innen aktiv in den Therapieprozess einbezogen werden. Dieses Lehrbuch vermittelt praxisnah die nötigen Kompetenzen für verschiedene Fachbereiche der Physiotherapie im klinischen Alltag.",
+			text: `
+Die Physiotherapie ist ein zentraler Bestandteil moderner Gesundheitsversorgung. Sie dient nicht nur der Rehabilitation nach Verletzungen oder Operationen, sondern spielt auch eine entscheidende Rolle in der Prävention, Schmerzbehandlung und der langfristigen Erhaltung körperlicher Funktionen. Dieses Lehrbuch richtet sich an Studierende und Berufseinsteiger*innen in der Physiotherapie sowie an Fachpersonen im Gesundheitswesen, die ein fundiertes Verständnis für die praktische Anwendung physiotherapeutischer Maßnahmen gewinnen möchten.
+
+In diesem ersten Kapitel möchten wir einen Überblick über die Rolle der Physiotherapie im interdisziplinären Kontext des Gesundheitswesens geben. Physiotherapeutinnen arbeiten eng mit Ärztinnen, Pflegefachkräften, Ergotherapeutinnen und weiteren Gesundheitsberufen zusammen, um individuelle Therapiepläne zu entwickeln, die auf den Bedürfnissen der Patientinnen basieren. Der Fokus liegt dabei nicht nur auf der Behandlung von Symptomen, sondern auf der Förderung der Selbstständigkeit und Lebensqualität.
+
+Ein weiteres zentrales Thema ist die evidenzbasierte Praxis. Die moderne Physiotherapie stützt sich auf wissenschaftliche Erkenntnisse, klinische Erfahrung und die individuellen Präferenzen der Patient*innen. Dieser Dreiklang bildet die Grundlage für wirksame und zielgerichtete Therapieentscheidungen. Ein Verständnis für medizinische Grundlagen, Pathologien und therapeutische Prinzipien ist daher essenziell.
+
+Abschließend soll dieses Kapitel das Verständnis fördern, dass Physiotherapie weit mehr ist als „Bewegungstherapie“. Sie ist ein aktiver, oft lebensbegleitender Prozess, der Patient*innen befähigt, Verantwortung für ihren Körper und ihre Gesundheit zu übernehmen. Die kommenden Kapitel führen praxisnah in relevante Arbeitsfelder wie Orthopädie, Neurologie, Pädiatrie und Geriatrie ein, und vermitteln die nötigen Kompetenzen, um im klinischen Alltag fundierte Entscheidungen zu treffen und wirkungsvoll zu therapieren.
+			`
 		}
 	]
 	uuid = ""
@@ -253,7 +415,6 @@ Was als Aufbegehren gegen die Unterdrückung begann, war nun zur gesamtdeutschen
 
 	onWordClick(event: Event, word: string) {
 		if (!this.dictionary[word]) return
-		console.log(event)
 
 		this.selectedWord = word
 		this.showPopup = true
