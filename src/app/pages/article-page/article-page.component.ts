@@ -4,7 +4,7 @@ import { ActivatedRoute } from "@angular/router"
 @Component({
 	templateUrl: "./article-page.component.html",
 	styleUrls: ["./article-page.component.scss"],
-	standalone: true
+	standalone: false
 })
 export class ArticlePageComponent {
 	dictionary: { [key: string]: { description: string } } = {

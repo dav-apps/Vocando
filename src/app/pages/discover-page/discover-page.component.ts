@@ -1,12 +1,10 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core"
+import { Component } from "@angular/core"
 import { Router } from "@angular/router"
 
 @Component({
 	templateUrl: "./discover-page.component.html",
 	styleUrls: ["./discover-page.component.scss"],
-	standalone: true,
-	providers: [Router],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA]
+	standalone: false
 })
 export class DiscoverPageComponent {
 	stories: {

@@ -22,7 +22,6 @@ import {
 	faHouse as faHouseRegular,
 	faSparkles as faSparklesRegular
 } from "@fortawesome/pro-regular-svg-icons"
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome"
 import * as DavUIComponents from "dav-ui-components"
 import { DataService } from "./services/data-service"
 
@@ -30,10 +29,7 @@ import { DataService } from "./services/data-service"
 	selector: "app-root",
 	templateUrl: "./app.component.html",
 	styleUrl: "./app.component.scss",
-	standalone: true,
-	imports: [RouterLink, RouterOutlet, FontAwesomeModule],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA],
-	providers: [DataService]
+	standalone: false
 })
 export class AppComponent {
 	faCircleUserSolid = faCircleUserSolid
