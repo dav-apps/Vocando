@@ -2,7 +2,13 @@
 	<h1>{{ title }}</h1>
 
 	@if (uuid.length > 0) {
-	<img [src]="'/images/' + uuid + '.jpg'" />
+		<dav-card
+			[imageSrc]="'/images/' + uuid + '-01.jpg'"
+			[headline]="chapterTitle"
+			[subhead]="chapterSubtitle"
+			orientation="horizontal"
+			style="width: 600px"
+		></dav-card>
 	}
 
 	<div class="text-container">
