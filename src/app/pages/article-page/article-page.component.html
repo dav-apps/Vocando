@@ -24,12 +24,12 @@
 	@if (showPopup) {
 	<div
 		class="popup"
-		[style.top.px]="popupPosition.y"
-		[style.left.px]="popupPosition.x"
+		[style.top.px]="popupPosition"
 	>
 		<div class="popup-content">
 			<h3>{{ selectedWord }}</h3>
-			<p>{{ dictionary[selectedWord].description }}</p>
+			<p>{{ dictionary[selectedWord].definition }}</p>
+			<p><strong>Part of Speech:</strong> {{ dictionary[selectedWord].type }}</p>
 		</div>
 	</div>
 	}

@@ -1,5 +1,6 @@
-import { Component } from "@angular/core"
+import { Component, HostListener } from "@angular/core"
 import { ActivatedRoute } from "@angular/router"
+import { DataService } from "../../services/data-service"
 
 @Component({
 	templateUrl: "./article-page.component.html",
@@ -7,12 +8,165 @@ import { ActivatedRoute } from "@angular/router"
 	standalone: false
 })
 export class ArticlePageComponent {
-	dictionary: { [key: string]: { description: string } } = {
-		Anna: { description: "Anna ist ein Mädchen, das in Deutschland lebt." },
-		Österreich: { description: "Österreich ist ein Land in Europa." },
-		Deutschland: { description: "Deutschland ist ein Land in Europa." },
-		München: { description: "München ist eine Stadt in Deutschland." },
-		Klara: { description: "Klara ist Annas Schwester." }
+	dictionary: { [key: string]: { definition: string; type: string } } = {
+		Im: {
+			definition: "In (archaic/prepositional contraction)",
+			type: "Preposition"
+		},
+		Frühling: { definition: "Spring (season)", type: "Noun" },
+		des: { definition: "Of the (genitive article)", type: "Article" },
+		Jahres: { definition: "Year (in genitive case)", type: "Noun" },
+		"1848": { definition: "The year 1848", type: "Number" },
+		lag: { definition: "Lay / was situated", type: "Verb" },
+		ein: { definition: "A / an", type: "Article" },
+		unruhiges: { definition: "Restless / uneasy", type: "Adjective" },
+		Flüstern: { definition: "Whispering / murmur", type: "Noun" },
+		über: { definition: "Over / above / across", type: "Preposition" },
+		dem: { definition: "The (dative article)", type: "Article" },
+		europäischen: {
+			definition: "European (in dative form)",
+			type: "Adjective"
+		},
+		Kontinent: { definition: "Continent", type: "Noun" },
+		In: { definition: "In", type: "Preposition" },
+		Paris: { definition: "Paris (city name)", type: "Proper Noun" },
+		war: { definition: "Was", type: "Verb" },
+		es: { definition: "It", type: "Pronoun" },
+		zu: {
+			definition: "To / towards / into (contextual preposition)",
+			type: "Preposition"
+		},
+		einem: {
+			definition: "A / an (dative masculine/neuter)",
+			type: "Article"
+		},
+		Volksaufstand: {
+			definition: "Popular uprising / people's revolt",
+			type: "Noun"
+		},
+		gekommen: {
+			definition: "Come / occurred (past participle)",
+			type: "Verb"
+		},
+		der: {
+			definition: "Who / which / the (relative/article)",
+			type: "Article"
+		},
+		König: { definition: "King", type: "Noun" },
+		"Louis-Philippe": {
+			definition: "Louis-Philippe (name of the king)",
+			type: "Proper Noun"
+		},
+		zur: {
+			definition: "To the (contraction of 'zu der')",
+			type: "Preposition + Article"
+		},
+		Abdankung: { definition: "Abdication", type: "Noun" },
+		zwang: { definition: "Forced", type: "Verb" },
+		Innerhalb: { definition: "Within", type: "Preposition" },
+		weniger: { definition: "Few / fewer", type: "Adjective" },
+		Wochen: { definition: "Weeks", type: "Noun" },
+		griffen: { definition: "Reached / spread to / seized", type: "Verb" },
+		die: { definition: "The", type: "Article" },
+		revolutionären: { definition: "Revolutionary", type: "Adjective" },
+		Wellen: { definition: "Waves", type: "Noun" },
+		auf: { definition: "To / on", type: "Preposition" },
+		Wien: { definition: "Vienna (city name)", type: "Proper Noun" },
+		Mailand: { definition: "Milan (city name)", type: "Proper Noun" },
+		und: { definition: "And", type: "Conjunction" },
+		schließlich: { definition: "Finally / eventually", type: "Adverb" },
+		auch: { definition: "Also / too", type: "Adverb" },
+		deutschen: { definition: "German", type: "Adjective" },
+		Staaten: { definition: "States", type: "Noun" },
+		Märzrevolution: { definition: "March Revolution", type: "Noun" },
+		wie: { definition: "As / like", type: "Conjunction" },
+		sie: { definition: "She / they", type: "Pronoun" },
+		später: { definition: "Later", type: "Adverb" },
+		genannt: { definition: "Called / named (past participle)", type: "Verb" },
+		werden: {
+			definition: "To become / be (passive auxiliary)",
+			type: "Verb"
+		},
+		sollte: { definition: "Should / was supposed to", type: "Verb" },
+		geboren: { definition: "Born", type: "Adjective/Participle" },
+		Deutschland: { definition: "Germany", type: "Proper Noun" },
+		jener: { definition: "That (masc./gen. demonstrative)", type: "Pronoun" },
+		Zeit: { definition: "Time / era", type: "Noun" },
+		kein: { definition: "No / not a", type: "Article" },
+		einheitlicher: { definition: "Unified / homogeneous", type: "Adjective" },
+		Nationalstaat: { definition: "Nation-state", type: "Noun" },
+		sondern: { definition: "But rather / instead", type: "Conjunction" },
+		Flickenteppich: {
+			definition: "Patchwork / patchwork quilt (figurative)",
+			type: "Noun"
+		},
+		Königreichen: { definition: "Kingdoms", type: "Noun" },
+		Herzogtümern: { definition: "Duchies", type: "Noun" },
+		freien: { definition: "Free", type: "Adjective" },
+		Städten: { definition: "Cities", type: "Noun" },
+		lose: { definition: "Loosely", type: "Adverb" },
+		zusammengehalten: { definition: "Held together", type: "Verb" },
+		vom: { definition: "By the (von dem)", type: "Preposition + Article" },
+		Straßen: { definition: "Streets", type: "Noun" },
+		Berlins: { definition: "Of Berlin", type: "Proper Noun (Genitive)" },
+		Frankfurts: {
+			definition: "Of Frankfurt",
+			type: "Proper Noun (Genitive)"
+		},
+		anderer: {
+			definition: "Other (genitive/dative/plural)",
+			type: "Adjective"
+		},
+		gärte: { definition: "Was fermenting / seething", type: "Verb" },
+		seit: { definition: "Since / for (time)", type: "Preposition" },
+		Jahren: { definition: "Years", type: "Noun" },
+		Menschen: { definition: "People / humans", type: "Noun" },
+		litten: { definition: "Suffered", type: "Verb" },
+		unter: { definition: "Under", type: "Preposition" },
+		wirtschaftlicher: {
+			definition: "Economic (feminine/genitive)",
+			type: "Adjective"
+		},
+		Not: { definition: "Hardship / distress / need", type: "Noun" },
+		Zensur: { definition: "Censorship", type: "Noun" },
+		politischer: {
+			definition: "Political (feminine/genitive)",
+			type: "Adjective"
+		},
+		Willkür: { definition: "Arbitrariness / despotism", type: "Noun" },
+		Mangel: { definition: "Lack / shortage", type: "Noun" },
+		Mitbestimmung: {
+			definition: "Participation / co-determination",
+			type: "Noun"
+		},
+		Bürgerliche: {
+			definition: "Middle-class people / bourgeois",
+			type: "Noun"
+		},
+		Intellektuelle: { definition: "Intellectuals", type: "Noun" },
+		Studenten: { definition: "Students", type: "Noun" },
+		Handwerker: { definition: "Craftsmen", type: "Noun" },
+		Arbeiter: { definition: "Workers", type: "Noun" },
+		sehnten: { definition: "Longed (for)", type: "Verb" },
+		sich: { definition: "Themselves / reflexive pronoun", type: "Pronoun" },
+		nach: {
+			definition: "After / for (context: desire)",
+			type: "Preposition"
+		},
+		Freiheit: { definition: "Freedom", type: "Noun" },
+		Gleichheit: { definition: "Equality", type: "Noun" },
+		nationaler: {
+			definition: "National (feminine/genitive)",
+			type: "Adjective"
+		},
+		Einheit: { definition: "Unity", type: "Noun" },
+		Am: { definition: "On the (an dem)", type: "Preposition + Article" },
+		erreichte: { definition: "Reached", type: "Verb" },
+		Metropole: { definition: "Metropolis", type: "Noun" },
+		Habsburgerreiches: {
+			definition: "Habsburg Empire (genitive form)",
+			type: "Proper Noun"
+		}
 	}
 	stories: {
 		id: string
@@ -66,10 +220,13 @@ Was als Aufbegehren gegen die Unterdrückung begann, war nun zur gesamtdeutschen
 	chapterSubtitle = ""
 	text = ""
 	showPopup = false
-	popupPosition = { x: 0, y: 0 }
+	popupPosition = 0
 	selectedWord = ""
 
-	constructor(private activatedRoute: ActivatedRoute) {}
+	constructor(
+		private activatedRoute: ActivatedRoute,
+		private dataService: DataService
+	) {}
 
 	ngOnInit() {
 		this.uuid = this.activatedRoute.snapshot.paramMap.get("uuid")
@@ -83,14 +240,24 @@ Was als Aufbegehren gegen die Unterdrückung begann, war nun zur gesamtdeutschen
 		}
 	}
 
+	@HostListener("document:click", ["$event"])
+	handleDocumentClick(event: MouseEvent) {
+		if (this.showPopup) {
+			const target = event.target as HTMLElement
+
+			if (!target.closest(".highlight") && !target.closest(".popup")) {
+				this.showPopup = false
+			}
+		}
+	}
+
 	onWordClick(event: Event, word: string) {
 		if (!this.dictionary[word]) return
+		console.log(event)
 
 		this.selectedWord = word
 		this.showPopup = true
-		this.popupPosition = {
-			x: (event as PointerEvent).clientX,
-			y: (event as PointerEvent).clientY
-		}
+		this.popupPosition =
+			(event as PointerEvent).y + this.dataService.contentContainer.scrollTop
 	}
 }
